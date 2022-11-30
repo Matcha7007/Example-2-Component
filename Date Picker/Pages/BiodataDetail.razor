@@ -14,20 +14,20 @@
             <label>Post Code<sup>*</sup></label>
         </div>
         <div class="col-xl-3 col-md-3">
-            <InputText class="form-control" @bind-Value="@addressForm.PostCode" @onchange="OnChangeForm"></InputText>
+            <InputText class="form-control" @bind-Value="@addressForm.PostCode" @onchange=@OnChangeForm></InputText>
         </div>
     </div>
 </EditForm>
 
 
 @code {
+    public AddressForm addressForm = new();
+
+    public string? test { get; set; }
 
     [Parameter]
     public EventCallback<ChangeEventArgs> OnChangeEvent { get; set; }
-
-    [Parameter]
-    public AddressForm addressForm { get; set; } = new();
-
+    
     public class AddressForm
     {
         public string City { get; set; }
@@ -44,12 +44,9 @@
         BiodataService.OnChange -= StateHasChanged;
     }
 
-    async Task OnChangeForm(ChangeEventArgs e)
+    public void OnChangeForm(ChangeEventArgs e)
     {
         e.Value.ToString();
-        BiodataDto tempBio = new BiodataDto();
-        tempBio.City = addressForm.City;
-        tempBio.PostCode = addressForm.PostCode;
-        BiodataService.SetValueForm(tempBio);
+
     }
 }
