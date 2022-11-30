@@ -1,0 +1,36 @@
+﻿@if (Employee == null)
+{
+    <div>
+        <h3>Loading.....</h3>
+    </div>
+}
+else
+{
+    <div class="col-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <img class="card-img-top img-thumbnail mb-3" src="@Employee.Photo" alt="Card Image">
+                <h4 class="card-title">@Employee.Name</h4>
+                <p class="card-text mb-0">
+                    <span><strong>Role :</strong></span>
+                    <span>@Employee.Role</span>
+                </p>
+                <p class="card-text">
+                    <span><strong>Department :</strong></span>
+                    <span>@Employee.Department</span>
+                </p>
+                <div class="row">
+                    <div class="col-4">
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#" class="btn btn-success">Edit</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

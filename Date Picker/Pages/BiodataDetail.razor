@@ -1,0 +1,55 @@
+﻿@implements IDisposable
+
+<EditForm Model="@addressForm">
+    <div class="row align-items-center mb-3">
+        <div class="col-xl-2 col-md-3">
+            <label>City<sup>*</sup></label>
+        </div>
+        <div class="col-xl-3 col-md-3">
+            <InputText class="form-control" @bind-Value="@addressForm.City" @onchange="OnChangeEvent"></InputText>
+        </div>
+    </div>
+    <div class="row align-items-center mb-3">
+        <div class="col-xl-2 col-md-3">
+            <label>Post Code<sup>*</sup></label>
+        </div>
+        <div class="col-xl-3 col-md-3">
+            <InputText class="form-control" @bind-Value="@addressForm.PostCode" @onchange="OnChangeForm"></InputText>
+        </div>
+    </div>
+</EditForm>
+
+
+@code {
+
+    [Parameter]
+    public EventCallback<ChangeEventArgs> OnChangeEvent { get; set; }
+
+    [Parameter]
+    public AddressForm addressForm { get; set; } = new();
+
+    public class AddressForm
+    {
+        public string City { get; set; }
+        public string PostCode { get; set; }
+    }
+
+    protected override void OnInitialized()
+    {
+        BiodataService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        BiodataService.OnChange -= StateHasChanged;
+    }
+
+    async Task OnChangeForm(ChangeEventArgs e)
+    {
+        e.Value.ToString();
+        BiodataDto tempBio = new BiodataDto();
+        tempBio.City = addressForm.City;
+        tempBio.PostCode = addressForm.PostCode;
+        BiodataService.SetValueForm(tempBio);
+    }
+}

@@ -1,0 +1,43 @@
+﻿@page "/biodata"
+@using static Date_Picker.Pages.BiodataDetail;
+
+
+<h3>Biodata</h3>
+<EditForm Model="@biodataForm" OnSubmit="SaveForm">
+    <div class="row align-items-center mb-3">
+        <div class="col-xl-2 col-md-3">
+            <label>Nama<sup>*</sup></label>
+        </div>
+        <div class="col-xl-3 col-md-3">
+            <InputText class="form-control" @bind-Value="@biodataForm.Name"></InputText>
+        </div>
+    </div>
+    <div class="row align-items-center mb-3">
+        <div class="col-xl-2 col-md-3">
+            <label>Nama<sup>*</sup></label>
+        </div>
+        <div class="col-xl-3 col-md-3">
+            <InputDate class="form-control" @bind-Value="@biodataForm.BirthDate"></InputDate>
+        </div>
+    </div>
+    <BiodataDetail addressForm="@biodataForm.addressForm"></BiodataDetail>
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    public string Name { get; set; }
+    public BiodataForm biodataForm = new();
+    public class BiodataForm
+    {
+        public string Name { get; set; }
+        public DateTime BirthDate { get; set; }
+        public AddressForm addressForm { get; set; }
+    }
+    async Task SaveForm()
+    {
+        Console.WriteLine(biodataForm);
+    }
+
+
+
+}

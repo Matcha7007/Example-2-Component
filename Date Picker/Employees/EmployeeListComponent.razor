@@ -1,0 +1,24 @@
+﻿@page "/employees"
+
+@if (EmployeesList.Length == 0)
+{
+    <div>
+        <h3>Loading.....</h3>
+    </div>
+}
+else
+{
+    <h1>Employees</h1>
+    <div class="row">
+        @foreach (var emp in EmployeesList)
+        {
+            <EmployeeCardComponent Employee="@emp"></EmployeeCardComponent>
+        }
+    </div>
+}
+
+
+
+@code {
+
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Dadang Surnandang",
+    "role": "CEO",
+    "department": "Global Management",
+    "photo": "images/photo-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Asep Bina Marga",
+    "role": "Team Manager",
+    "department": "Software Engineer",
+    "photo": "images/photo-1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Oleh Stang Ganda",
+    "role": "Software Architect",
+    "department": "Software Engineer",
+    "photo": "images/photo-1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Titin Hartantini",
+    "role": "Junior Software Architect",
+    "department": "Software Engineer",
+    "photo": "images/photo-2.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Endang Kok Asih",
+    "role": "IT Business Analyst",
+    "department": "Business Analyst",
+    "photo": "images/photo-1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Cahyanto Tofu Bulat",
+    "role": "Senior UI/UX Designer",
+    "department": "Team Designer",
+    "photo": "images/photo-1.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Arini Mata Air",
+    "role": "UI/UX Designer",
+    "department": "Team Designer",
+    "photo": "images/photo-2.jpg"
+  }
+]
